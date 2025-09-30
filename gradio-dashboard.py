@@ -4,7 +4,7 @@ import numpy as np
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_chroma import Chroma
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 import gradio as gr
 
@@ -22,7 +22,7 @@ huggingface_embeddings = HuggingFaceEmbeddings(
 )
 
 raw_documents = TextLoader("tagged_description.txt", encoding="utf-8").load()
-text_splitter = CharacterTextSplitter(separator="\n", chunk_size=0, chunk_overlap=0)
+text_splitter = CharacterTextSplitter(separator="\n", chunk_size=1000, chunk_overlap=0)
 documents = text_splitter.split_documents(raw_documents)
 db_books = Chroma.from_documents(documents, huggingface_embeddings)
 
