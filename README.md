@@ -43,6 +43,4 @@ python gradio-dashboard.py
 
 🤗 **Hugging Face Demo**
 
-You can try the live demo here:
-👉 Hugging Face Spaces - Book Recommender
-https://huggingface.co/spaces/Lyonsaldanha/semantic-book-recommender
+You can try the live demo here: https://huggingface.co/spaces/Lyonsaldanha/semantic-book-recommender
